@@ -8,7 +8,6 @@ const config = require('config');
 //Initialize express
 const app = express();
 
-
 app.use(express.json());
 app.use(cors());
 
@@ -18,6 +17,8 @@ app.get('/', (req,res) =>{
 });
 
 //routes
+const ruta_doctores = require('./libs/doctores/Routes/doctores');
+app.use(ruta_doctores);
 
 //Port
 const port = config.get('SERVER.port');
