@@ -34,10 +34,9 @@ class DoctoresDAO {
    * @returns
    */
   async guardarDoctor(doctor) {
-    let sql = `INSERT INTO public."doctores"(id, cedula, registro, nombres, apellidos, especialidad, correo, telefono)
-                VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`;
+    let sql = `INSERT INTO public."doctores"( cedula, registro, nombres, apellidos, especialidad, correo, telefono)
+                VALUES ($1, $2, $3, $4, $5, $6, $7);`;
     let valores = [
-      doctor.id,
       doctor.cedula,
       doctor.registro,
       doctor.nombres,
